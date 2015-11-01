@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bDD-Km-Dtt">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--Audio Player-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftAudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahk-xv-iSP">
+                                <rect key="frame" x="20" y="210" width="280" height="60.5"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Ljf-oV-ruB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="48"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track 1 / 5 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIT-As-5YJ">
+                                <rect key="frame" x="20" y="162" width="280" height="40"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xuQ-wb-j9t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucc-Px-Vag">
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="LQW-8k-1TL"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="Ah2-8m-Wf6">
+                                        <connections>
+                                            <action selector="prevButtonAction:" destination="BYZ-38-t0r" id="fZG-Nz-Rfe"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="u09-H7-0Xw"/>
+                                    <barButtonItem systemItem="play" id="gHc-yW-Eas">
+                                        <connections>
+                                            <action selector="playButtonAction:" destination="BYZ-38-t0r" id="gC3-1S-liI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XT8-sI-fxg"/>
+                                    <barButtonItem systemItem="pause" id="uXS-E2-njz">
+                                        <connections>
+                                            <action selector="pauseButtonAction:" destination="BYZ-38-t0r" id="QwV-HP-VCb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JRK-nY-Pb0"/>
+                                    <barButtonItem systemItem="fastForward" id="DVF-4Q-f40">
+                                        <connections>
+                                            <action selector="nextButtonAction:" destination="BYZ-38-t0r" id="hYx-dR-PLl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="track title come here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZD-sQ-2Vt">
+                                <rect key="frame" x="20" y="278" width="280" height="40"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="sYv-81-8Bp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ucc-Px-Vag" secondAttribute="trailing" id="83S-7D-7Wg"/>
+                            <constraint firstItem="Ahk-xv-iSP" firstAttribute="top" secondItem="IIT-As-5YJ" secondAttribute="bottom" constant="8" id="C7C-Up-n5a"/>
+                            <constraint firstItem="Ahk-xv-iSP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="DLv-Na-IsV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ucc-Px-Vag" secondAttribute="bottom" id="Jjk-uj-jws"/>
+                            <constraint firstAttribute="trailing" secondItem="IIT-As-5YJ" secondAttribute="trailing" constant="20" id="KT9-SR-ZLp"/>
+                            <constraint firstAttribute="trailing" secondItem="fZD-sQ-2Vt" secondAttribute="trailing" constant="20" id="Rwq-C9-6zb"/>
+                            <constraint firstItem="Ahk-xv-iSP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Su4-7X-GBp"/>
+                            <constraint firstItem="fZD-sQ-2Vt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Z05-2R-LKv"/>
+                            <constraint firstItem="fZD-sQ-2Vt" firstAttribute="top" secondItem="Ahk-xv-iSP" secondAttribute="bottom" constant="8" id="gPl-GS-eI8"/>
+                            <constraint firstItem="ucc-Px-Vag" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iaz-Ae-x0z"/>
+                            <constraint firstAttribute="trailing" secondItem="Ahk-xv-iSP" secondAttribute="trailing" constant="20" id="qrS-dU-QIV"/>
+                            <constraint firstItem="IIT-As-5YJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="yaS-nz-rAF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Audio Player" id="xij-ec-oZh"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="nextButton" destination="DVF-4Q-f40" id="dQm-vt-0Nm"/>
+                        <outlet property="pauseButton" destination="uXS-E2-njz" id="bbx-Cy-3fn"/>
+                        <outlet property="playButton" destination="gHc-yW-Eas" id="Yzc-id-9dZ"/>
+                        <outlet property="playDuration" destination="Ahk-xv-iSP" id="Sc9-OV-nir"/>
+                        <outlet property="prevButton" destination="Ah2-8m-Wf6" id="CyW-It-n13"/>
+                        <outlet property="trackInfo" destination="IIT-As-5YJ" id="3yY-5p-cZe"/>
+                        <outlet property="trackTitle" destination="fZD-sQ-2Vt" id="as0-my-gWo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1272" y="367"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uCV-qE-I6K">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bDD-Km-Dtt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="V9N-vd-sR8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zSw-Ik-xS0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u31-pQ-npM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="833" y="367"/>
+        </scene>
+    </scenes>
+</document>
