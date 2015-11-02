@@ -12,6 +12,9 @@
 		8F81C2F61BE5CE77009BEB91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F81C2F41BE5CE77009BEB91 /* Main.storyboard */; };
 		8F81C2F81BE5CE77009BEB91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F81C2F71BE5CE77009BEB91 /* Assets.xcassets */; };
 		8F81C2FB1BE5CE77009BEB91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F81C2F91BE5CE77009BEB91 /* LaunchScreen.storyboard */; };
+		8F81C3061BE653CD009BEB91 /* forest-bright-01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F81C3051BE653CD009BEB91 /* forest-bright-01.mp3 */; };
+		8F81C3081BE653D3009BEB91 /* jungle-01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F81C3071BE653D3009BEB91 /* jungle-01.mp3 */; };
+		8F81C30A1BE653D9009BEB91 /* swamp-01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F81C3091BE653D9009BEB91 /* swamp-01.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		8F81C2F71BE5CE77009BEB91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F81C2FA1BE5CE77009BEB91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F81C2FC1BE5CE77009BEB91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F81C3051BE653CD009BEB91 /* forest-bright-01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "forest-bright-01.mp3"; path = "mp3/forest-bright-01.mp3"; sourceTree = "<group>"; };
+		8F81C3071BE653D3009BEB91 /* jungle-01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "jungle-01.mp3"; path = "mp3/jungle-01.mp3"; sourceTree = "<group>"; };
+		8F81C3091BE653D9009BEB91 /* swamp-01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "swamp-01.mp3"; path = "mp3/swamp-01.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 		8F81C2EF1BE5CE77009BEB91 /* SwiftAudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				8F81C3021BE65371009BEB91 /* mp3 */,
 				8F81C2F01BE5CE77009BEB91 /* AppDelegate.swift */,
 				8F81C2F21BE5CE77009BEB91 /* ViewController.swift */,
 				8F81C2F41BE5CE77009BEB91 /* Main.storyboard */,
@@ -62,6 +69,16 @@
 				8F81C2FC1BE5CE77009BEB91 /* Info.plist */,
 			);
 			path = SwiftAudioPlayer;
+			sourceTree = "<group>";
+		};
+		8F81C3021BE65371009BEB91 /* mp3 */ = {
+			isa = PBXGroup;
+			children = (
+				8F81C3091BE653D9009BEB91 /* swamp-01.mp3 */,
+				8F81C3071BE653D3009BEB91 /* jungle-01.mp3 */,
+				8F81C3051BE653CD009BEB91 /* forest-bright-01.mp3 */,
+			);
+			name = mp3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,8 +139,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F81C3081BE653D3009BEB91 /* jungle-01.mp3 in Resources */,
+				8F81C3061BE653CD009BEB91 /* forest-bright-01.mp3 in Resources */,
 				8F81C2FB1BE5CE77009BEB91 /* LaunchScreen.storyboard in Resources */,
 				8F81C2F81BE5CE77009BEB91 /* Assets.xcassets in Resources */,
+				8F81C30A1BE653D9009BEB91 /* swamp-01.mp3 in Resources */,
 				8F81C2F61BE5CE77009BEB91 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +306,7 @@
 				8F81C3011BE5CE77009BEB91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

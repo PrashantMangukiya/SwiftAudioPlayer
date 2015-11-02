@@ -10,15 +10,15 @@ import UIKit
 import AVFoundation
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     // audio player object
     var audioPlayer = AVAudioPlayer()
     
     
-    // play list file name and title
-    var playList = [String]()
-    var playListTitle = [String]()
+    // play list file and title list
+    var playListFiles = [String]()
+    var playListTitles = [String]()
     
     // total number of track
     var trackCount: Int = 0
@@ -68,12 +68,13 @@ class ViewController: UIViewController {
     
     
     
+    
     // MARK: - View functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // create/setup play list
+        // setup play list
         self.setupPlayList()
         
         // setup audio player
@@ -81,6 +82,9 @@ class ViewController: UIViewController {
         
         // set button status
         self.setButtonStatus()
+        
+        // play track
+        self.playTrack()
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,33 +93,68 @@ class ViewController: UIViewController {
     }
 
     
+
+    
+    // MARK: - AVAudio player delegate functions.
+    
+    // set status false and set button  when audio finished.
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        
+        // set playing off
+        self.isPlaying = false
+        
+        self.setButtonStatus()
+    }
+    
+    
+    
     
     // MARK: - Utility functions
     
-    // create/setup playList
+    // setup playList
     private func setupPlayList() {
         
-        // audio resource list
-        self.playList = ["track-1","track-2","track-3","track-4","track-5"]
+        // audio resource file list
+        self.playListFiles = ["forest-bright-01","jungle-01","swamp-01","forest-bright-01","jungle-01"]
         
         // track title list
-        self.playListTitle = ["Track title 1","Track title 2","Track title 3","Track title 4","Track title 5"]
+        self.playListTitles = ["1 - Forest Bright", "2 - Jungle", "3 - Swamp", "4 - Forest Bright", "5 - Jungle"]
         
         // total number of track
-        self.trackCount = self.playList.count
+        self.trackCount = self.playListFiles.count
         
-        // currently playing track
+        // set current track
         self.currentTrack = 1
         
         // set playing status
         self.isPlaying = false
     }
     
+    
     // setup audio player
     private func setupAudioPlayer() {
     
-        // coming soon...
-    
+        // choose file from play list
+        let fileURL:NSURL =  NSBundle.mainBundle().URLForResource(self.playListFiles[self.currentTrack-1], withExtension: "mp3")!
+        
+        do {
+            // create audio player with given file url
+            self.audioPlayer = try AVAudioPlayer(contentsOfURL: fileURL)
+            
+            // set audio player delegate
+            self.audioPlayer.delegate = self
+            
+            // set default volume level
+            self.audioPlayer.volume = 0.7
+            
+            // make player ready (i.e. preload buffer)
+            self.audioPlayer.prepareToPlay()
+            
+        } catch let error as NSError {
+            // print error in friendly way
+            print(error.localizedDescription)
+        }
+        
     }
     
     // play current track
@@ -123,7 +162,10 @@ class ViewController: UIViewController {
         
         // set play status
         self.isPlaying = true
-    
+        
+        // play currently loaded track
+        self.audioPlayer.play()
+        
         self.setButtonStatus()
     }
 
@@ -133,8 +175,12 @@ class ViewController: UIViewController {
         // set play status
         self.isPlaying = false
         
+        // play currently loaded track
+        self.audioPlayer.pause()
+        
         self.setButtonStatus()
     }
+    
     
     // play next track
     private func playNextTrack() {
@@ -147,9 +193,18 @@ class ViewController: UIViewController {
             self.currentTrack += 1
         }
 
+        // stop player if currently playing
+        if self.audioPlayer.playing {
+            self.audioPlayer.stop()
+        }
+        
+        // setup player for updated track
+        self.setupAudioPlayer()
+        
         // play track
         self.playTrack()
     }
+    
     
     // play prev track
     private func playPrevTrack() {
@@ -161,7 +216,15 @@ class ViewController: UIViewController {
         if self.currentTrack > 1 {
             self.currentTrack -= 1
         }
-
+        
+        // stop player if currently playing
+        if self.audioPlayer.playing {
+            self.audioPlayer.stop()
+        }
+        
+        // setup player for updated track
+        self.setupAudioPlayer()
+        
         // play track
         self.playTrack()
     }
@@ -196,10 +259,10 @@ class ViewController: UIViewController {
         }
                 
         // set track info
-        self.trackInfo.text = "\(self.currentTrack) / \(self.trackCount) "
+        self.trackInfo.text = "Track \(self.currentTrack) / \(self.trackCount)"
     
         // set track title
-        self.trackTitle.text = self.playListTitle[self.currentTrack - 1]
+        self.trackTitle.text = self.playListTitles[self.currentTrack - 1]
     }
     
     

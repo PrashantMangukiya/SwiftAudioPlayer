@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahk-xv-iSP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- --" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahk-xv-iSP">
                                 <rect key="frame" x="20" y="210" width="280" height="60.5"/>
                                 <animations/>
                                 <constraints>
@@ -79,6 +79,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="audio sample taken from www.mediacollege.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="oqy-EH-NUm">
+                                <rect key="frame" x="8" y="394.5" width="304" height="33.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -88,12 +95,15 @@
                             <constraint firstItem="Ahk-xv-iSP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="DLv-Na-IsV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ucc-Px-Vag" secondAttribute="bottom" id="Jjk-uj-jws"/>
                             <constraint firstAttribute="trailing" secondItem="IIT-As-5YJ" secondAttribute="trailing" constant="20" id="KT9-SR-ZLp"/>
+                            <constraint firstAttribute="trailing" secondItem="oqy-EH-NUm" secondAttribute="trailing" constant="8" id="No9-Ce-UI3"/>
                             <constraint firstAttribute="trailing" secondItem="fZD-sQ-2Vt" secondAttribute="trailing" constant="20" id="Rwq-C9-6zb"/>
                             <constraint firstItem="Ahk-xv-iSP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Su4-7X-GBp"/>
+                            <constraint firstItem="ucc-Px-Vag" firstAttribute="top" secondItem="oqy-EH-NUm" secondAttribute="bottom" constant="8" id="T5c-eW-8zo"/>
                             <constraint firstItem="fZD-sQ-2Vt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Z05-2R-LKv"/>
                             <constraint firstItem="fZD-sQ-2Vt" firstAttribute="top" secondItem="Ahk-xv-iSP" secondAttribute="bottom" constant="8" id="gPl-GS-eI8"/>
                             <constraint firstItem="ucc-Px-Vag" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iaz-Ae-x0z"/>
                             <constraint firstAttribute="trailing" secondItem="Ahk-xv-iSP" secondAttribute="trailing" constant="20" id="qrS-dU-QIV"/>
+                            <constraint firstItem="oqy-EH-NUm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="w1O-YV-1hv"/>
                             <constraint firstItem="IIT-As-5YJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="yaS-nz-rAF"/>
                         </constraints>
                     </view>
