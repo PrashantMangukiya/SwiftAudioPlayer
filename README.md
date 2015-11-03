@@ -1,5 +1,34 @@
-# SwiftAudioPlayer
+# Swift Audio Player
 Audio player demo application build using Swift 2, Xcode 7, and iOS 9
 
-# Coming Soon...
-Please check back this repo. Source code will be added soon.
+## Overview
+Swift based sample application build using ``AVFoundation`` library. It uses ``AVAudioPlayer`` for playing mp3 file. This application can be used as a base for any ``Audio Player`` project to expand it's functionality. It's free for personal or commercial use.
+
+**It consist functionality below:**
++ Load mp3 using ``AVAudioPlayer``
++ Change Track (Next, Previous).
++ Play, Pause current track.
++ Currently Playing label.
++ Zoon In/Out of map.
+
+## Platform
++ Swift 2
++ Xcode 7
++ iOS 9
+
+## Supported Device
+iPhone 4s, 5, 5s, 5c, 6, 6 Plus, 6s, 6s Plus, all iPad having iOS 9.
+
+## Technology Used
++ ``AVFoundation`` library.
++ ``AVAudioPlayer`` component.
++ Simple and Clean interface.
++ Build with Xcode storyboard.
++ Adaptive layout for major screen size support.
++ Created with ``Swift 2``, ``Xcode 7``, ``iOS 9``.
+
+## Screenshots
+Coming soon..
+
+## License
+Swift Audio Player is available under the MIT license. See the LICENSE file for more info.
