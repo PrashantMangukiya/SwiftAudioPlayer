@@ -15,6 +15,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     // audio player object
     var audioPlayer = AVAudioPlayer()
     
+    // timer (used to show current track play time)
+    var timer:NSTimer!
+    
     
     // play list file and title list
     var playListFiles = [String]()
@@ -103,9 +106,17 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         // set playing off
         self.isPlaying = false
         
+        // invalidate scheduled timer.
+        self.timer.invalidate()
+        
         self.setButtonStatus()
     }
     
+    // show message if error occured while decoding the audio
+    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer, error: NSError?) {
+        // print friendly error message
+        print(error!.localizedDescription)
+    }
     
     
     
@@ -163,14 +174,21 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         // set play status
         self.isPlaying = true
         
+        // set timer, so it will update played time lable every second.
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updatePlayedTimeLabel", userInfo: nil, repeats: true)
+        
         // play currently loaded track
         self.audioPlayer.play()
+        
         
         self.setButtonStatus()
     }
 
     // pause current track
     private func pauseTrack() {
+        
+        // invalidate scheduled timer.
+        self.timer.invalidate()
         
         // set play status
         self.isPlaying = false
@@ -265,6 +283,16 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         self.trackTitle.text = self.playListTitles[self.currentTrack - 1]
     }
     
+    // update currently played time label.
+    func updatePlayedTimeLabel(){
+        
+        let currentTime = Int(self.audioPlayer.currentTime)
+        let minutes = currentTime/60
+        let seconds = currentTime - (minutes * 60)
+        
+        // update time within label
+        self.playDuration.text = NSString(format: "%02d:%02d", minutes,seconds) as String
+    }
     
 }
 
