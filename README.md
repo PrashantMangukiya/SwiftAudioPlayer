@@ -11,6 +11,9 @@ Swift based sample application build using ``AVFoundation`` library. It uses ``A
 + Currently Playing label.
 + Zoon In/Out of map.
 
+![ScreenShot iPhone4](../master/Screenshots/main-1t.png)
+![ScreenShot iPhone4](../master/Screenshots/main-2t.png)
+
 ## Platform
 + Swift 2
 + Xcode 7
@@ -28,7 +31,11 @@ iPhone 4s, 5, 5s, 5c, 6, 6 Plus, 6s, 6s Plus, all iPad having iOS 9.
 + Created with ``Swift 2``, ``Xcode 7``, ``iOS 9``.
 
 ## Screenshots
-Coming soon..
+![ScreenShot iPhone4](../master/Screenshots/main-1t.png)
+![ScreenShot iPhone4](../master/Screenshots/main-2t.png)
 
 ## License
 Swift Audio Player is available under the MIT license. See the LICENSE file for more info.
+
+## Sample Music
+Sample music mp3 file used from <a href="http://www.mediacollege.com/" target="_blank">www.mediacollege.com/</a> for demo purpose only.
