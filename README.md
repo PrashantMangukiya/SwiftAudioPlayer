@@ -9,7 +9,6 @@ Swift based sample application build using ``AVFoundation`` library. It uses ``A
 + Change Track (Next, Previous).
 + Play, Pause current track.
 + Currently Playing label.
-+ Zoon In/Out of map.
 
 ![ScreenShot iPhone4](../master/Screenshots/main-1t.png)
 ![ScreenShot iPhone4](../master/Screenshots/main-2t.png)
